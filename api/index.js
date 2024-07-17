@@ -1,6 +1,8 @@
 const express = require('express');
+require('dotenv').config()
 const app = express();
-const port = 4000;
+const port = process.env.PORT;
+require('dotenv').config
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
@@ -17,7 +19,9 @@ const { reset } = require('nodemon');
 // const path = require('path');
 // const fs = require('fs');
 
-mongoose.connect('mongodb://127.0.0.1:27017/REM')
+//mongodb://127.0.0.1:27017/REM
+
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Failed to connect to MongoDB:', err));
 
