@@ -5,7 +5,7 @@ const port = process.env.PORT;
 
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken'); // Import JWT
 const Customer = require('./models/customer');
 const Property = require('./models/property');
