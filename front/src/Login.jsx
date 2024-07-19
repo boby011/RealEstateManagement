@@ -30,7 +30,7 @@ export const Login = () => {
           localStorage.setItem('id', response.data.data._id);
           localStorage.setItem('userType', response.data.data.roles);
 
-          if (response.data.data.roles === 'agency' && response.data.data.status) {
+          if (response.data.data.roles === 'agency') {
             window.alert('Agency Login Success');
             navigate('/agencypage/agencyprofile');
           } else if (response.data.data.roles === 'tenant') {
