@@ -1,12 +1,15 @@
 import React from 'react';
-import homeBackground from './home4.png';
+import homeBackground from './home4.png'; // Ensure this path is correct
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import './REM.css';
 
 export const Home = () => {
   return (
-    <div className="home-container" style={{ backgroundImage: `url(${homeBackground})` }}>
+    <div 
+      className="home-container" 
+      style={{ backgroundImage:` url(${homeBackground})` }} // Corrected background image usage
+    >
       <div className="homecontent">
         <div className="social-icons">
           <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>

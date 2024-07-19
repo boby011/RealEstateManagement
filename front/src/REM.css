@@ -200,11 +200,14 @@
 .home-container {
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  position: relative;
 }
 
 .homecontent {
@@ -553,10 +556,42 @@
 
   .home-container {
     height: auto;
+    background-size: cover;
+    background-position: center center;
+  }
+   
+  .homecontent{
+    text-align: center;
+    color: white;
+    padding: 20px;
+    z-index: 1;
   }
 
+  .social-icons{
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+
+  .message-icon{
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .message-icon{
+    color:white;
+    font-size: 24px;
+  }
   .main-heading {
-    font-size: 28px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius:10px;
   }
 
   .sub-heading {
@@ -574,6 +609,8 @@
   .welcome-heading {
     font-size: 50px;
   }
+
+
 }
 
 @media screen and (max-width: 576px) {
@@ -601,4 +638,7 @@
   .welcome-heading {
     font-size: 40px;
   }
-}
+  .home-container{
+      background-size: 200%;
+    }
+  }
