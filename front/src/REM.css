@@ -1,21 +1,20 @@
+/* Base Imports */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Moul&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&display=swap');
+
 /* Nav */
 .nav-wrapper .flex {
   background-color: #333; /* Set background color to transparent */
-  /* backdrop-filter: blur(20px); */
   display: flex;
   align-items: center;
   gap: 30px;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* position: sticky; */
   top: 0; /* Stick it to the top */
   z-index: 1000; /* Ensure it's above other content */
   padding: 10px 20px;
- 
 }
 
 .nav-wrapper .list {
@@ -24,7 +23,7 @@
   flex-wrap: wrap;
   text-decoration: none;
 }
- .head{
+.head {
   color: #ffffff;
   font-family: "Moul", serif;
   font-size: 24px;
@@ -41,9 +40,9 @@
 .list a:hover {
   color: #f0f0f0;
 }
+
 /* Home */
 .social-icons {
-  
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -52,8 +51,7 @@
 }
 
 .social-icons a {
- 
-  color:white;
+  color: white;
   font-size: 24px;
   margin-right: 10px;
 }
@@ -78,18 +76,15 @@
   font-size: 24px;
 }
 
-/*logout*/
-
-
+/* Logout */
 .logoutbtn {
-  /* Define your button styles */
   background-color: #ff5733;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-decoration: none; /* Remove default button underline */
+  text-decoration: none; 
 }
 
 /* Optional: Add hover effect */
@@ -97,13 +92,8 @@
   background-color: #ff7f50;
 }
 
-
-/* AdminPage Navbar */
-
-
-
 /* Login */
-.login-wrapper {
+.login-wrapper, .register-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,32 +103,32 @@
   background-image: url('./login.jpg');
 }
 
-.login-box {
-  width: 100%; /* Set the width to 100% */
-  max-width: 420px; /* Limit the maximum width */
+.login-box, .register-box {
+  width: 100%;
+  max-width: 420px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   color: black;
   border-radius: 10px;
-  padding: 30px; /* Adjust padding */
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  padding: 30px;
+  box-sizing: border-box;
 }
 
-.login-box h1 {
+.login-box h1, .register-box h1 {
   font-size: 36px;
   text-align: center;
 }
 
-.login-box .input-box {
+.login-box .input-box, .register-box .input-box {
   position: relative;
   width: 100%;
   height: 50px; /* Adjust height */
   margin: 30px 0;
 }
 
-.login-box .input-box input {
+.login-box .input-box input, .register-box .input-box input {
   width: 80%;
   height: 100%;
   background: transparent;
@@ -150,11 +140,11 @@
   outline: none;
 }
 
-.login-box .input-box input::placeholder {
+.login-box .input-box input::placeholder, .register-box .input-box input::placeholder {
   color: aliceblue;
 }
 
-.login-box .input-box i {
+.login-box .input-box i, .register-box .input-box i {
   position: absolute;
   right: 20px;
   top: 50%;
@@ -162,28 +152,27 @@
   font-size: 20px;
 }
 
-.login-box .remember-forgot {
+.login-box .remember-forgot, .register-box .register-link {
   display: flex;
   justify-content: space-between;
   font-size: 14.5px;
   margin: -15px 0 15px;
 }
 
-.login-box .remember-forgot label input {
+.login-box .remember-forgot label input, .register-box .register-link p a {
   accent-color: aliceblue;
-  margin-right: 3px;
 }
 
-.login-box .remember-forgot a {
+.login-box .remember-forgot a, .register-box .register-link p a {
   color: aliceblue;
   text-decoration: none;
 }
 
-.login-box .remember-forgot a:hover {
+.login-box .remember-forgot a:hover, .register-box .register-link p a:hover {
   text-decoration: underline;
 }
 
-.login-box .btn {
+.login-box .btn, .register-box .btn {
   width: 100%;
   height: 45px;
   background: aliceblue;
@@ -197,109 +186,21 @@
   font-weight: 600;
 }
 
-.login-box .register-link {
+.login-box .register-link p a, .register-box .register-link p a {
+  font-weight: 600;
+}
+
+.login-box .register-link, .register-box .register-link {
   font-size: 14.5px;
   text-align: center;
   margin: 20px 0 15px;
 }
 
-.login-box .register-link p a {
-  color: aliceblue;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-box .register-link p a:hover {
-  text-decoration: underline;
-}
-
-/* Register */
-.register-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  background-image: url('./login.jpg');
-}
-
-.register-box {
-  width: 100%;
-  max-width: 420px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-  color: black;
-  border-radius: 10px;
-  padding: 30px;
-  box-sizing: border-box;
-}
-
-.register-box h1 {
-  font-size: 36px;
-  text-align: center;
-}
-.register-box .input-box {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  margin: 30px 0;
-}
-
-.register-box .input-box input {
-  width: 80%;
-  height: 80%;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: aliceblue;
-  padding: 0 20px; /* Adjust padding */
-  outline: none;
-}
-
-.register-box .input-box input::placeholder {
-  color: aliceblue;
-}
-
-.register-box .input-box i {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-}
-
-
-.register-box .register-link {
-  font-size: 14.5px;
-  text-align: center;
-  margin: 20px 0 15px;
-}
-
-.register-box .register-link p a {
-  color: aliceblue;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.register-box .register-link p a:hover {
-  text-decoration: underline;
-}
-
-
-/*Home*/
-/* Add this class to hide the navbar on the home page */
-
-
-
-
+/* Home */
 .home-container {
   background-size: cover;
   background-position: center;
-  position: relative; /* Add position relative */
+  position: relative;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -309,30 +210,30 @@
 .homecontent {
   text-align: center;
   color: white;
-  padding: 20px; /* Add padding to the content */
+  padding: 20px;
 }
 
 .main-heading {
   font-size: 36px;
   margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Add background color with some opacity */
-  padding: 10px 20px; /* Add padding to the heading */
-  border-radius: 10px; /* Add border radius for rounded corners */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .sub-heading {
   font-size: 24px;
 }
 
-/*About*/
+/* About */
 .about-page {
   background-color: white;
 }
+
 .about-mainhead {
-  font-size: 160px; /* Giant font size */
+  font-size: 160px;
   margin-top: 10px;
   font-family: "Dancing Script", cursive;
-
   text-align: center;
 }
 
@@ -343,6 +244,7 @@
   font-size: 40px;
   font-style: italic;
 }
+
 .about-container {
   background-color: black;
   margin: 20px;
@@ -352,40 +254,35 @@
   box-shadow: 0 0 10px rgba(220, 207, 207, 0.1);
 }
 
-.about-heading {
+.about-heading, .about-content, .about-content p, .about-content ul, .about-content li {
   font-family: "Outfit", sans-serif;
-  font-size: 36px;
   color: white;
+}
+
+.about-heading {
+  font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .about-content {
-  font-family: "Outfit", sans-serif;
-  color: white;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.about-content p {
-  font-family: "Outfit", sans-serif;
-  color: white;
+.about-content p, .about-content li {
   margin-bottom: 10px;
 }
 
 .about-content ul {
-  font-family: "Outfit", sans-serif;
-  color: white;
   margin-bottom: 20px;
 }
 
 .about-content li {
-  font-family: "Outfit", sans-serif;
-  color: white;
   margin-left: 20px;
 }
 
-/*Admin*/
+/* Admin */
 .welcome-container {
   text-align: center;
   margin-top: 50px;
@@ -394,12 +291,12 @@
 .welcome-heading {
   font-size: 60px;
   font-family: "Dancing Script", cursive;
-  color: #333; /* Adjust color as needed */
+  color: #333;
   text-align: center;
   margin-top: 50px;
 }
 
-/*AgencyDetail*/
+/* Agency Detail */
 .agency-table {
   width: 100%;
   border-collapse: collapse;
@@ -415,9 +312,7 @@
   background-color: #f2f2f2;
 }
 
-/*UserDetail*/
-
-
+/* User Detail */
 .user-details-container {
   margin-top: 20px;
 }
@@ -427,8 +322,7 @@
   border-collapse: collapse;
 }
 
-.user-details-table th,
-.user-details-table td {
+.user-details-table th, .user-details-table td {
   padding: 10px;
   border: 1px solid #ddd;
 }
@@ -441,459 +335,270 @@
 .user-details-table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+
 /* REM.css */
 
 /* Agency Profile Container */
 .agency-profile-container {
   display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.agency-profile-box {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
 }
 
 /* Profile Box */
 .profile-box {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
   padding: 20px;
-  margin-right: 20px; /* Add margin between boxes */
-  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Head */
-.ProfileHead {
+.profile-head {
+  font-size: 28px;
   text-align: center;
-  color: #333333;
-  font-size: 24px;
-  margin-bottom: 20px;
 }
 
-/* Profile Details */
 .profile-details {
-  text-align: left;
+  margin-top: 20px;
 }
 
 .profile-details p {
-  margin-bottom: 10px;
   font-size: 16px;
-  color: #555555;
+  line-height: 1.5;
 }
 
-.profile-details p strong {
-  font-weight: bold;
-  margin-right: 5px;
-  color: #333333;
-}
-
-/* Update Box */
-.update-box {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+/* Create Property */
+.create-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+}
+
+.create-container form {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
   max-width: 600px;
 }
 
-.update-box h2 {
-  text-align: center;
-  color: #333333;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Form Group */
-.form-group {
-  margin-bottom: 20px;
-}
-
-/* Label */
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-/* Input */
-input[type="email"],
-input[type="text"],
-input[type="number"] {
-  width: 100%;
+.create-container input[type="text"], .create-container input[type="number"], .create-container textarea {
+  width: calc(100% - 20px);
+  margin: 10px 0;
   padding: 10px;
-  border: 1px solid #cccccc;
   border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-/* Submit Button */
-button[type="submit"] {
+.create-container button {
   width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-
-/*AgencyPropertyAdd*/
-.create-container {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.login-title {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.cinput-group {
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-textarea {
-  width: 100%;
+  background: #007bff;
+  color: white;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.cbutton {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.cbutton:hover {
-  background-color: #0056b3;
+.create-container button:hover {
+  background: #0056b3;
 }
 
-/*Card*/
+/* Card */
 .card-container {
   display: flex;
-  flex-wrap: wrap; 
-  /* justify-content: space-between; */
-  margin-top: -10px;
-
-  gap: 10px; /* Align cards with space between */
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
+
 .card {
-  background-color: #fff1e1;
+  width: calc(50% - 20px);
+  background: #fff;
   border-radius: 10px;
-  width: 300px;
-  height: 400px;
-  margin: 0;
-  /* margin-bottom: 10x; Adjust margin as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
 }
 
 .card img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
 }
 
-.card-body {
-  padding: 20px;
-}
-
-.card-title {
-  color:  #1d3c45;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.card-content {
-  font-size: 1rem;
-  color:  #d2601a;
-  /* Limit the height and overflow content */
-  max-height: 150px; /* Adjust as needed */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limit number of lines to display */
-  -webkit-box-orient: vertical;
-}
-
-/*PropertyDetails*/
-
-.content {
-  color: black;
-  margin-top: 20px; 
-  margin-left: 40px;
-} 
-/* REM.css */
-
-/* Add styles for the PropertyDetails component */
+/* Property Details */
 .property-details-container {
   padding: 20px;
 }
 
-.property-details-container .details {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
+.property-details-container img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-.property-details-container .details h1 {
-  font-size: 24px;
+.property-details-container h2 {
+  font-size: 28px;
   margin-bottom: 10px;
 }
 
-.property-details-container .details img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
-.property-details-container .details .content {
-  font-size: 16px;
-  line-height: 1.6;
-}
-/* REM.css */
-
-/* Add styles for the booking button */
+/* Booking Button */
 .booking-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  display: inline-block;
   padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.booking-button:hover {
-  background-color: #0056b3;
-}
-
-/* AgencyBookedProperty.css */
-
-.booked-property-container {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.booked-property {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.booked-property p {
-  margin: 5px 0;
-}
-
-.booked-property h2 {
-  margin-bottom: 20px;
-}
-/* REM.css */
-
-/* Search container */
-.search-container {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Search input */
-.search-container input[type="text"] {
-  width: 200px; /* Reduce width */
-  padding: 8px; /* Reduce padding */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 5px; /* Reduce right margin */
-}
-
-/* Search button */
-.search-container button {
-  padding: 8px 16px; /* Reduce padding */
-  background-color: #007bff; /* Blue color */
+  background: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
+  text-align: center;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.search-container button:hover {
-  background-color: #0056b3; /* Darker blue color */
+.booking-button:hover {
+  background: #218838;
 }
 
-/* CONTACT */
-
-/* Base styles */
-.contact-page {
-  background-image: url('Chat.jpg');
-  background-size: cover;
-  background-position: center;
+/* Search Container */
+.search-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Change height to min-height for responsiveness */
+  margin: 20px 0;
 }
 
-.contact-info-container,
-.contact-form-container {
-  background-color: rgba(255, 255, 255, 0.8);
+.search-container input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Contact */
+.contact-page {
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  color: #333;
+}
+
+.contact-info-container, .contact-form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .contact-info-container {
-  margin-right: 20px;
-}
-
-.contact-info {
-  margin-top: 20px;
-}
-
-.contact-info p {
-  font-size: 16px;
-  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form-container {
-  width: 100%; /* Set width to 100% for responsiveness */
-  max-width: 400px;
-  margin-top: 300px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form-container h2 {
-  margin-bottom: 20px;
+/* Responsive Design Media Queries */
+@media screen and (max-width: 1200px) {
+  /* Styles for medium screens */
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 992px) {
+  /* Styles for tablets */
+  .nav-wrapper .list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    left: 10px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
-.contact-form button {
-  padding: 10px;
-  background-color: #0d47a1;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background-color: #1565c0;
-}
-
-/* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
-  .contact-page {
-    flex-direction: column; /* Stack containers vertically */
+  /* Styles for mobile phones */
+  .nav-wrapper .flex {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .contact-info-container {
-    margin-right: 0; /* Remove margin */
-    margin-bottom: 20px;
+  .nav-wrapper .list {
+    gap: 15px;
   }
 
-  .contact-form-container {
-    margin-top: 0; /* Remove top margin */
+  .login-box, .register-box {
+    width: 100%;
+  }
+
+  .home-container {
+    height: auto;
+  }
+
+  .main-heading {
+    font-size: 28px;
+  }
+
+  .sub-heading {
+    font-size: 20px;
+  }
+
+  .about-mainhead {
+    font-size: 100px;
+  }
+
+  .about-mainsub {
+    font-size: 30px;
+  }
+
+  .welcome-heading {
+    font-size: 50px;
   }
 }
 
-/* propertydetailhandle.css */
-/* REM.css */
+@media screen and (max-width: 576px) {
+  /* Styles for very small screens */
+  .card {
+    width: 100%;
+  }
 
-.property-details-handle-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; 
-}
+  .login-box h1, .register-box h1 {
+    font-size: 24px;
+  }
 
-.details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px; 
-}
+  .main-heading, .sub-heading {
+    font-size: 22px;
+  }
 
-.details h1 {
-  margin-top: 20px;
-}
+  .about-mainhead {
+    font-size: 80px;
+  }
 
-.details img {
-  width: 100%; /* Make the image fill its container */
-  max-width: 400px; /* Limit the maximum width of the image */
-  margin-bottom: 20px;
-}
+  .about-mainsub {
+    font-size: 24px;
+  }
 
-.content {
-  text-align: center;
-}
-
-/* Agency Details */
-.agency-details {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.agency-details p {
-  margin-bottom: 10px;
-}
-
-/* Delete Button */
-.delete-button {
-  margin-top: auto; /* Push the button to the bottom */
-  margin-bottom: 20px; /* Add some bottom margin for spacing */
-  display: flex;
-  justify-content: center;
-}
-
-.delete-button button {
-  padding: 10px 20px;
-  background-color: #ff0000; /* Red button */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.delete-button button:hover {
-  background-color: #cc0000; /* Darker red on hover */
+  .welcome-heading {
+    font-size: 40px;
+  }
 }
