@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './REM.css'; 
+import { baseUrl } from './Urls';
 
 export const AgencyProfile = () => {
   const [agency, setAgencyData] = useState({
@@ -15,7 +16,7 @@ export const AgencyProfile = () => {
   useEffect(() => {
     const fetchAgencyData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/agencyprofile/${id}`);
+        const response = await axios.get(`${baseUrl}/agencyprofile/${id}`);
         setAgencyData(response.data);
       } catch (error) {
         console.error('Error fetching agency data:', error);
@@ -32,7 +33,7 @@ export const AgencyProfile = () => {
   const handleUpdate = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:4000/updateagencyprofile/${id}`, agency);
+      const response = await axios.put(`${baseUrl}/updateagencyprofile/${id}`, agency);
       if (response.data) {
         localStorage.setItem('response', JSON.stringify(response.data));
         window.alert('Profile Updated Successfully');

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {useNavigate } from 'react-router-dom';
 import './REM.css';
+import { baseUrl } from './Urls';
 
 const AgencyDetail = () => {
     const navigate=useNavigate()
@@ -10,7 +11,7 @@ const AgencyDetail = () => {
 
     useEffect(() => {
         // Fetch all agencies
-        axios.get('http://localhost:4000/agency')
+        axios.get(`${baseUrl}/agency`)
             .then(response => {
                 setAgencies(response.data);
             })
@@ -20,7 +21,7 @@ const AgencyDetail = () => {
     }, []);
     const verifyAgencies = async (agencyId,status) => {
         try {
-       const response= await axios.put(`http://localhost:4000/agencyverification/${agencyId}`,{status});
+       const response= await axios.put(`${baseUrl}/agencyverification/${agencyId}`,{status});
        console.log('ddj',response);
        setAgencies(agencies.map(agency => (agency._id === agencyId ? { ...agency, verified: true } : agency)));
       } catch (error) {

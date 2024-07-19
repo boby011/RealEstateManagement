@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import './REM.css';
+import { baseUrl } from './Urls';
 
 export const PropertyBook = () => {
   const [properties, setProperties] = useState([]);
@@ -11,7 +12,7 @@ export const PropertyBook = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/propertiessearch?location=${searchLocation}`);
+      const response = await axios.get(`${baseUrl}/propertiessearch?location=${searchLocation}`);
       console.log('Search results:', response.data); // Log the response
       setProperties(response.data);
     } catch (error) {
@@ -42,7 +43,7 @@ export const PropertyBook = () => {
               {properties.map(item => (
                 <div key={item._id} className="card">
                   <Card onClick={() => { navigate(`/userpage/propertydetails/${item._id}`) }}>
-                    <Card.Img variant="top" src={`http://localhost:4000/uploads/${item.image}`} alt="property" width={'200px'} height={'200px'} />
+                    <Card.Img variant="top" src={`${baseUrl}/uploads/${item.image}`} alt="property" width={'200px'} height={'200px'} />
                     <Card.Body className="property-details">
                       <Card.Title className="card-title">
                         <h2>{item.title}</h2>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './REM.css'; 
+import { baseUrl } from './Urls';
 
 const UserDetails = () => {
     const navigate=useNavigate()
@@ -10,7 +11,7 @@ const UserDetails = () => {
     
     useEffect(() => {
         // Fetch all users
-        axios.get('http://localhost:4000/users')
+        axios.get(`${baseUrl}/users`)
             .then(response => {
                 setUsers(response.data);
             })

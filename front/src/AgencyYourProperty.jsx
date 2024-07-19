@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import './REM.css';
+import { baseUrl } from './Urls';
 
 export const AgencyYourProperty = ({  }) => {
   const [properties, setAgencyProperties] = useState([]);
@@ -11,7 +12,7 @@ export const AgencyYourProperty = ({  }) => {
   useEffect(() => {
     const fetchAgencyProperties = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/agencyproperties/${id}`);
+        const response = await axios.get(`${baseUrl}/agencyproperties/${id}`);
         setAgencyProperties(response.data);
       } catch (error) {
         console.error('Error fetching agency properties:', error);
@@ -29,7 +30,7 @@ export const AgencyYourProperty = ({  }) => {
           {properties.map(item => (
             <div key={item._id} className='card'>
               <Card onClick={() => { navigate(`/agencypage/agencyyourpropertydetails/${item._id}`) }}>
-                <Card.Img variant="top" src={`http://localhost:4000/uploads/${item.image}`} alt="property" width={'200px'} height={'200px'} />
+                <Card.Img variant="top" src={`${baseUrl}/uploads/${item.image}`} alt="property" width={'200px'} height={'200px'} />
                 <Card.Body className="property-details">
                   <Card.Title className='card-title'>
                     <h2>{item.title}</h2>

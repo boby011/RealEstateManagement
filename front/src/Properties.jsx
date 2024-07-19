@@ -3,6 +3,7 @@ import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 import './REM.css'; 
+import { baseUrl } from './Urls';
 
 export const Properties = () => {
   const [properties, setProperties] = useState([]);
@@ -14,7 +15,7 @@ export const Properties = () => {
 
   const getProperties = async () => {
     try {
-      let response = await axios.get('http://localhost:4000/properties');
+      let response = await axios.get(`${baseUrl}/properties`);
       console.log(response.data);
       setProperties(response.data);
     } catch (error) {
@@ -30,7 +31,7 @@ export const Properties = () => {
           {properties.map(item => (
             <div key={item._id} className='card'>
               <Card onClick={() => { navigate(`/homepropertydetails/${item._id}`) }}>
-                <Card.Img variant="top" src={`http://localhost:4000/uploads/${item.image}`} alt="property" width={'200px'} height={'200px'} />
+                <Card.Img variant="top" src={`${baseUrl}/uploads/${item.image}`} alt="property" width={'200px'} height={'200px'} />
                 <Card.Body className="property-details">
                   <Card.Title className='card-title'>
                     <h2>{item.title}</h2>

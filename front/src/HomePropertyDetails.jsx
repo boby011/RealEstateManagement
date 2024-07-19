@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import axios from 'axios';
 import './REM.css';
+import { baseUrl } from './Urls';
 
 export const HomePropertyDetails = () => {
     const { id } = useParams();
@@ -13,7 +14,7 @@ export const HomePropertyDetails = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/propertydetails/${id}`);
+                const response = await axios.get(`${baseUrl}/propertydetails/${id}`);
                 console.log(response.data);
                 setProperty(response.data);
             } catch (error) {
@@ -30,7 +31,7 @@ export const HomePropertyDetails = () => {
         <section className="property-details-container">
             <div className="details container">
                 <h1>{property.title}</h1>
-                <img src={`http://localhost:4000/uploads/${property.image}`} alt="" />
+                <img src={`${baseUrl}/uploads/${property.image}`} alt="" />
                 <div className="content">{property.description}</div>
                 
             </div>

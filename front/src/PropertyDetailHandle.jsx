@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './REM.css';
+import { baseUrl } from './Urls';
 
 export const PropertyDetailHandle = () => {
     const { id } = useParams();
@@ -12,12 +13,12 @@ export const PropertyDetailHandle = () => {
 
     const fetchData = async () => {
         try {
-            const propertyResponse = await axios.get(`http://localhost:4000/propertydetails/${id}`);
+            const propertyResponse = await axios.get(`${baseUrl}/propertydetails/${id}`);
             setProperty(propertyResponse.data);
 
             // Check if property.user exists before fetching agency details
             if (propertyResponse.data.user) {
-                const agencyResponse = await axios.get(`http://localhost:4000/agencyprofile/${propertyResponse.data.user}`);
+                const agencyResponse = await axios.get(`${baseUrl}/agencyprofile/${propertyResponse.data.user}`);
                 setAgency(agencyResponse.data);
             } else {
                 console.error('No agency details found for this property');
@@ -30,7 +31,7 @@ export const PropertyDetailHandle = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:4000/propertydetails/${id}`);
+            await axios.delete(`${baseUrl}/propertydetails/${id}`);
             navigate('/adminpage/propertyhandle');
         } catch (error) {
             console.error('Error deleting property:', error);
@@ -47,7 +48,7 @@ export const PropertyDetailHandle = () => {
 
             <div className="property-details-handle-container">
                 <div className="details ">
-                    <img src={`http://localhost:4000/uploads/${property.image}`} alt="" />
+                    <img src={`${baseUrl}/uploads/${property.image}`} alt="" />
                     <div className="content">
                         <h1>{property.title}</h1>
                         <div>{property.description}</div>

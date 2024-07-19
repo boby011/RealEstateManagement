@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './REM.css'; 
+import { baseUrl } from './Urls';
 
 export const UserProfile = () => {
   const [user, setUserData] = useState({
@@ -15,7 +16,7 @@ export const UserProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/userprofile/${id}`);
+        const response = await axios.get(`${baseUrl}/userprofile/${id}`);
         setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user data:', error);
@@ -32,7 +33,7 @@ export const UserProfile = () => {
   const handleUpdate = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:4000/updateuserprofile/${id}`, user);
+      const response = await axios.put(`${baseUrl}/updateuserprofile/${id}`, user);
       if (response.data) {
         localStorage.setItem('response', JSON.stringify(response.data));
         window.alert('Profile Updated Successfully');

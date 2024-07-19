@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './REM.css';
+import { baseUrl } from './Urls';
 
 export const BookingForm = () => {
     const { id,user } = useParams();
@@ -29,7 +30,7 @@ export const BookingForm = () => {
         const fetchUserData = async () => {
             try {
                 console.log('Fetching user data...');
-                const response = await axios.get(`http://localhost:4000/users/${userId}`);
+                const response = await axios.get(`${baseUrl}/users/${userId}`);
                 console.log('User data:', response.data);
                 const userData = response.data;
                 // Populate form data with user details
@@ -51,7 +52,7 @@ export const BookingForm = () => {
     useEffect(() => {
         const fetchPropertyDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/propertydetails/${id}`);
+                const response = await axios.get(`${baseUrl}/propertydetails/${id}`);
                 console.log(response.data);
                 setPropertyDetails(response.data);
             } catch (error) {
@@ -71,7 +72,7 @@ export const BookingForm = () => {
         event.preventDefault();
         console.log('Form submitted');
         try {
-            const response = await axios.post('http://localhost:4000/bookings', {
+            const response = await axios.post(`${baseUrl}/bookings`, {
                 propertyId: id,
                 title: propertyDetails.title,
                 location:propertyDetails.location,
